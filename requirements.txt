@@ -1,0 +1,7 @@
+firecrawl
+pydantic
+python-dotenv
+fastapi
+python-multipart
+uvicorn
+gunicorn
