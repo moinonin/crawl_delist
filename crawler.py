@@ -53,6 +53,14 @@ class SiteExtract:
                     'schema': ExtractSchema.model_json_schema(),
                 }
             )
+        elif self.exchange == 'okx':
+            return app_crw.extract(
+                [f"https://okx.com/help/section/announcements-delistings"],
+                {
+                    'prompt': common_prompt,
+                    'schema': ExtractSchema.model_json_schema(),
+                }
+            )
         else:
             return {'error': 'Exchange not supported'}
 
