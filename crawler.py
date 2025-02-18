@@ -82,7 +82,7 @@ def scraper(exchange: str):
             #    formatted_pair = f"{pair}/USDT:USDT"
             #else:
             base_asset = pair.replace('USDT', '') if 'USDT' in pair else pair
-            formatted_pair = f"{base_asset}/USDT:USDT"
+            formatted_pair = f"{base_asset}USDT:USDT"
             pairs.append(formatted_pair)
         #print(f"Extraction of {len(pairs)} pairs complete!")
         return pairs
