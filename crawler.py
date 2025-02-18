@@ -28,6 +28,7 @@ class SiteExtract:
             'Extract all trading pairs that will be delisted or have been recently delisted. '
             'Include the status and delist date if available. The exchange name should be in lowercase. '
             'For gate.io, use "gateio" as the exchange name.'
+            'for all exchanges provide trading pairs like so: SYMBOL/USDT. i.e extract if in brackets'
         )
         if self.exchange == 'gateio':
             return app_crw.extract(
@@ -77,11 +78,11 @@ def scraper(exchange: str):
         for item in info:
             pair = item.get('pair', '')
             exchange_name = item.get('exchange', '')
-            if exchange_name == 'gateio':
-                formatted_pair = f"{pair}/USDT:USDT"
-            else:
-                base_asset = pair.replace('USDT', '') if 'USDT' in pair else pair
-                formatted_pair = f"{base_asset}/USDT:USDT"
+            #if exchange_name == 'gateio':
+            #    formatted_pair = f"{pair}/USDT:USDT"
+            #else:
+            base_asset = pair.replace('USDT', '') if 'USDT' in pair else pair
+            formatted_pair = f"{base_asset}/USDT:USDT"
             pairs.append(formatted_pair)
         #print(f"Extraction of {len(pairs)} pairs complete!")
         return pairs
