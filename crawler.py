@@ -28,7 +28,7 @@ class SiteExtract:
             'Extract all trading pairs that will be delisted or have been recently delisted. '
             'Include the status and delist date if available. The exchange name should be in lowercase. '
             'For gate.io, use "gateio" as the exchange name.'
-            'for all exchanges provide trading pairs like so: SYMBOL/USDT. i.e extract if in brackets'
+            'for all exchanges provide trading pairs like so: SYMBOL/USDT (capitalized). i.e extract if in brackets with'
         )
         if self.exchange == 'gateio':
             return app_crw.extract(
